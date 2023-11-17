@@ -3,15 +3,7 @@ from sqlalchemy import *
 db_connection_string = "mysql+pymysql://root:raine@localhost/careers"
 engine = create_engine(db_connection_string)
 
-with engine.connect() as conn:
-  result = conn.execute(text("select * from jobs"))
 
-  result_dicts = []
-  for row in result.all():
-    row_dict = dict(row._asdict())
-    result_dicts.append(row_dict)
-    print(row_dict)
-  print(result_dicts)
 
   # print("type(result)", type(result))
   # result_all = result.all()
